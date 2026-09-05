@@ -1,0 +1,14 @@
+{
+  "name": "compiler-dev",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "haskell.haskell",
+        "haskell.language-haskell"
+      ]
+    }
+  }
+}
