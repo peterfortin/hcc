@@ -62,7 +62,9 @@ executable highsea
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    -- other-modules:
+    other-modules:    Lexer,
+                      Parser,
+                      AssemblyGenerator
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -71,7 +73,9 @@ executable highsea
     build-depends:    base ^>=4.20.2.0,
                       text >= 2.1.3 && < 2.2,
                       containers >= 0.7 && < 0.8,
-                      mtl >= 2.3.1 && < 2.4
+                      mtl >= 2.3.1 && < 2.4,
+                      optparse-applicative >= 0.19.0 && < 0.20,
+                      process >= 1.6.26 && < 1.7
 
     -- Directories containing source files.
     hs-source-dirs:   app
