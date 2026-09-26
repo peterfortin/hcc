@@ -7,7 +7,7 @@
 {-# OPTIONS_GHC -w #-}
 
 {-|
-Module      : Paths_highsea
+Module      : Paths_hcc
 Description : Data file location, and package version and installation
               directories.
 
@@ -22,7 +22,7 @@ For further information about Cabal's options for its configuration step, and
 their default values, see the Cabal User Guide.
 -}
 
-module Paths_highsea (
+module Paths_hcc (
     version,
     getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir,
     getDataFileName, getSysconfDir
@@ -63,33 +63,33 @@ getDataFileName name = do
 
 -- |The location of the directory specified by Cabal's @--bindir@ option (where
 -- executables that the user might invoke are installed). This can be overridden
--- at runtime using the environment variable highsea_bindir.
+-- at runtime using the environment variable hcc_bindir.
 getBinDir :: IO FilePath
 
 -- |The location of the directory specified by Cabal's @--libdir@ option (where
 -- object libraries are installed). This can be overridden at runtime using the
--- environment variable highsea_libdir.
+-- environment variable hcc_libdir.
 getLibDir :: IO FilePath
 
 -- |The location of the directory specified by Cabal's @--dynlibdir@ option
 -- (where dynamic libraries are installed). This can be overridden at runtime
--- using the environment variable highsea_dynlibdir.
+-- using the environment variable hcc_dynlibdir.
 getDynLibDir :: IO FilePath
 
 -- |The location of the directory specified by Cabal's @--datadir@ option (where
 -- architecture-independent data files are installed). This can be overridden at
--- runtime using the environment variable highsea_datadir.
+-- runtime using the environment variable hcc_datadir.
 getDataDir :: IO FilePath
 
 -- |The location of the directory specified by Cabal's @--libexedir@ option
 -- (where executables that are not expected to be invoked directly by the user
 -- are installed). This can be overridden at runtime using the environment
--- variable highsea_libexedir.
+-- variable hcc_libexedir.
 getLibexecDir :: IO FilePath
 
 -- |The location of the directory specified by Cabal's @--sysconfdir@ option
 -- (where configuration files are installed). This can be overridden at runtime
--- using the environment variable highsea_sysconfdir.
+-- using the environment variable hcc_sysconfdir.
 getSysconfDir :: IO FilePath
 
 
@@ -97,18 +97,18 @@ getSysconfDir :: IO FilePath
 
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 bindir     = "/root/.cabal/bin"
-libdir     = "/root/.cabal/lib/x86_64-linux-ghc-9.10.3-b4c3/highsea-0.1.0.0-inplace-highsea"
+libdir     = "/root/.cabal/lib/x86_64-linux-ghc-9.10.3-b4c3/hcc-0.1.0.0-inplace-hcc"
 dynlibdir  = "/root/.cabal/lib/x86_64-linux-ghc-9.10.3-b4c3"
-datadir    = "/root/.cabal/share/x86_64-linux-ghc-9.10.3-b4c3/highsea-0.1.0.0"
-libexecdir = "/root/.cabal/libexec/x86_64-linux-ghc-9.10.3-b4c3/highsea-0.1.0.0"
+datadir    = "/root/.cabal/share/x86_64-linux-ghc-9.10.3-b4c3/hcc-0.1.0.0"
+libexecdir = "/root/.cabal/libexec/x86_64-linux-ghc-9.10.3-b4c3/hcc-0.1.0.0"
 sysconfdir = "/root/.cabal/etc"
 
-getBinDir     = catchIO (getEnv "highsea_bindir")     (\_ -> return bindir)
-getLibDir     = catchIO (getEnv "highsea_libdir")     (\_ -> return libdir)
-getDynLibDir  = catchIO (getEnv "highsea_dynlibdir")  (\_ -> return dynlibdir)
-getDataDir    = catchIO (getEnv "highsea_datadir")    (\_ -> return datadir)
-getLibexecDir = catchIO (getEnv "highsea_libexecdir") (\_ -> return libexecdir)
-getSysconfDir = catchIO (getEnv "highsea_sysconfdir") (\_ -> return sysconfdir)
+getBinDir     = catchIO (getEnv "hcc_bindir")     (\_ -> return bindir)
+getLibDir     = catchIO (getEnv "hcc_libdir")     (\_ -> return libdir)
+getDynLibDir  = catchIO (getEnv "hcc_dynlibdir")  (\_ -> return dynlibdir)
+getDataDir    = catchIO (getEnv "hcc_datadir")    (\_ -> return datadir)
+getLibexecDir = catchIO (getEnv "hcc_libexecdir") (\_ -> return libexecdir)
+getSysconfDir = catchIO (getEnv "hcc_sysconfdir") (\_ -> return sysconfdir)
 
 
 
